@@ -39,7 +39,14 @@
   });
 
   navLinks?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-  window.addEventListener('resize', () => { if (window.innerWidth > 850) closeMenu(); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1080) closeMenu(); });
+
+  // Carry CTA intent into the enquiry form without requiring a backend router.
+  const params = new URLSearchParams(window.location.search);
+  const intentField = document.querySelector('#interest');
+  const productField = document.querySelector('#product');
+  if (intentField && params.has('intent')) intentField.value = params.get('intent');
+  if (productField && params.has('product')) productField.value = params.get('product');
 
   const revealItems = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -64,8 +71,21 @@
       form.reportValidity();
       return;
     }
-    if (status) status.textContent = 'Thanks — your message is ready to send. Connect this form to your preferred form service before launch.';
-    form.reset();
+    const data = new FormData(form);
+    const subject = `North Cliq ${data.get('interest')} enquiry — ${data.get('company')}`;
+    const body = [
+      `Name: ${data.get('name')}`,
+      `Company: ${data.get('company')}`,
+      `Business email: ${data.get('email')}`,
+      `Country: ${data.get('country')}`,
+      `Enquiry: ${data.get('interest')}`,
+      `Product: ${data.get('product') || 'Not specified'}`,
+      `Estimated quantity: ${data.get('quantity') || 'Not specified'}`,
+      '',
+      String(data.get('message'))
+    ].join('\n');
+    if (status) status.textContent = 'Your enquiry is ready. Opening your email application…';
+    window.location.href = `mailto:sourcing@northcliq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 
   document.querySelectorAll('[data-year]').forEach((item) => { item.textContent = new Date().getFullYear(); });

@@ -1,6 +1,6 @@
 # North Cliq website
 
-A fast, responsive five-page business website built with semantic HTML, modern CSS and vanilla JavaScript. It has no runtime dependencies and no build step.
+A fast, responsive B2B sourcing website built with semantic HTML, modern CSS and vanilla JavaScript. It has no runtime dependencies and no build step.
 
 ## Project structure
 
@@ -10,6 +10,8 @@ A fast, responsive five-page business website built with semantic HTML, modern C
 ├── about.html
 ├── services.html
 ├── products.html
+├── why-north-cliq.html
+├── industries.html
 ├── contact.html
 ├── css/
 │   ├── style.css
@@ -37,9 +39,9 @@ Then open `http://localhost:8000`. No installation or compilation is required.
 ## Content and configuration before launch
 
 - Confirm the public domain and replace `https://northcliq.com` in `sitemap.xml` and `robots.txt` if needed.
-- Replace the representative testimonial when client approval is available.
-- Update the email address, Stockholm location and LinkedIn URL if required.
-- The contact form currently provides accessible client-side feedback. Connect it to Cloudflare Pages Forms, Formspree or another form endpoint before accepting submissions.
+- Confirm product specifications, available certifications and MOQ guidance before publishing commercial claims.
+- Update the sourcing email address and Stockholm location if required.
+- The contact form opens a pre-filled email in the buyer's email application, keeping deployment backend-free. For direct server-side submission, connect it to a form endpoint before launch.
 - Add privacy/legal pages appropriate to the business and jurisdiction.
 
 ## Deploy to GitHub Pages

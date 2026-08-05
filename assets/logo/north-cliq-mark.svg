@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title"><title id="title">North Cliq mark</title><rect width="64" height="64" rx="18" fill="#0b1220"/><path d="M17 43V21h5l12 14V21h6v22h-5L23 29v14h-6Zm30-22h-4v22h4V21Z" fill="#fff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-labelledby="title description">
+  <title id="title">North Cliq</title>
+  <desc id="description">North Cliq typographic wordmark</desc>
+  <text x="4" y="68" fill="#0B1320" font-family="Inter, Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="64" font-weight="650" letter-spacing="-3">North Cliq</text>
+</svg>
